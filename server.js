@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
+// Set up Express App
 var app = express();
 var PORT = process.env.PORT || 3001;
 
@@ -17,8 +18,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("./public"));
 
-// Routes =============================================================
-
+// Routes 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
