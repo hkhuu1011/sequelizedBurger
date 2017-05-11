@@ -9,7 +9,7 @@ module.exports = function(app) {
     // findAll returns all entries for a table when used with no options
     db.burgers.findAll({}).then(function(dbburgers) {
       // We have access to the burgers as an argument inside of the callback function
-      res.json(dbgurgers);
+      res.json(dbburgers);
     });
   });
 
