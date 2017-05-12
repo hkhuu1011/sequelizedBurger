@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var burgers = sequelize.define("burgers", {
+  var Burgers = sequelize.define("Burgers", {
     burger_name: {
       type: DataTypes.STRING, // AllowNull is a flag that restricts a burger from being entered if it doesn't
       // have a text value
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     }
   });
-  return burgers;
+  return Burgers;
 };
 
 
