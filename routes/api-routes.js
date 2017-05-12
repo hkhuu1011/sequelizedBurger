@@ -7,7 +7,7 @@ module.exports = function(app) {
   // GET route for getting all of the burgers
   app.get("/api/burgers", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.burgers.findAll({}).then(function(dbBurgers) {
+    db.Burgers.findAll({}).then(function(dbBurgers) {
       // We have access to the burgers as an argument inside of the callback function
       res.json(dbBurgers);
     });
@@ -18,7 +18,7 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a burger_name
     // and devoured property (req.body)
-    db.burgers.create({
+    db.Burgers.create({
       burger_name: req.body.burger_name,
       devoured: req.body.devoured
     }).then(function(dbBurgers) {
@@ -48,7 +48,7 @@ module.exports = function(app) {
 
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
-    db.burgers.update({
+    db.Burgers.update({
       burger_name: req.body.burger_name,
       devoured: req.body.devoured
     }, {
