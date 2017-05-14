@@ -39,7 +39,7 @@ $(document).ready(function() {
 		newBurgerSpan.text(burger.burger_name);
 		newInputRow.append(newBurgerSpan);
 		var newBurgerInput = $("<input>");
-	    newBurgerInput.attr("type", "text");
+	    newBurgerInput.attr("type", "burger_name");
 	    newBurgerInput.addClass("edit");
 	    newBurgerInput.css("display", "none");
 	    newInputRow.append(newBurgerInput);
