@@ -10,7 +10,7 @@ $(document).ready(function() {
 	var burgers;
 
 	// Getting burgers from database when page loads
-	getburgers();
+	getBurgers();
 
 	// Function resets the burgers displayed with new burgers from the database
 	function initializeRows() {
@@ -23,9 +23,9 @@ $(document).ready(function() {
 	}
 
 	// Function grabs burgers from the database and updates the view
-	function getburgers() {
+	function getBurgers() {
 		$.get("/api/burgers", function(data) {
-			console.log("burgers", data);
+			console.log("new burger: ", data);
 			burgers = data;
 			initializeRows();
 		});
@@ -46,7 +46,7 @@ $(document).ready(function() {
 	    var devourBtn = $("<button>");
 	    devourBtn.addClass("btn btn-default");
 	    devourBtn.text("Devour it!");
-	    devourBtn.data("id", todo.id);
+	    devourBtn.data("id", burger.id);
 
 	}
 
@@ -58,19 +58,14 @@ $(document).ready(function() {
 			burger_name: newBurgerInput
 				.val()
 				.trim(),
-				complete: false
+			complete: false
 		};
 
 		// Posting the new burger, calling getburgers() when done
 		$.post("/api/burgers", burger, function() {
-			getburgers();
+			getBurgers();
 		});
 		newBurgerInput.val("");
 	}
-
-
-
-
-
 
 }); // End document.ready function
