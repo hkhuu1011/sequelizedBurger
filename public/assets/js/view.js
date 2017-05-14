@@ -34,10 +34,10 @@ $(document).ready(function() {
 	// Function constructs a burger row
 	function createNewRow(burger) {
 		var newInputRow = $("<div>");
-		newInputRow.addClass("list-group-burger burger-type");
-		var newBurgerSpan = $("<span>");
-		newBurgerSpan.text(burger.burger_name);
-		newInputRow.append(newBurgerSpan);
+		newInputRow.addClass("list-burgers");
+		var newBurgerDiv = $("<div>");
+		newBurgerDiv.text(burger.burger_name);
+		newInputRow.append(newBurgerDiv);
 		var newBurgerInput = $("<input>");
 	    newBurgerInput.attr("type", "burger_name");
 	    newBurgerInput.addClass("edit");

@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       validate : {
         len: {
           args: [1, 140],
-          msg : 'Please enter a TODO less than 140 Characters, or greater than 1.'
+          msg : 'Please enter in a burger.'
         }
       }
     },
