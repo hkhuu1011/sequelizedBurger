@@ -17,7 +17,7 @@ $(document).ready(function() {
 		burgerContainer.empty();
 		var rowsToAdd = [];
 		for (var i = 0; i < burgers.length; i++) {
-			rowsToAdd.push(creatNewRow(burgers[i]));
+			rowsToAdd.push(createNewRow(burgers[i]));
 		}
 		burgerContainer.prepend(rowsToAdd);
 	}
@@ -32,17 +32,17 @@ $(document).ready(function() {
 	}
 
 	// Function constructs a burger row
-	function createNewRow(burgers) {
+	function createNewRow(burger) {
 		var newInputRow = $("<li>");
 		newInputRow.addClass("list-group-burger burger-type");
 		var newBurgerSpan = $("<span>");
-		newBurgerSpan.text(burgers.burger_name);
+		newBurgerSpan.text(burger.burger_name);
 		newInputRow.append(newBurgerSpan);
 		var newBurgerInput = $("<input>");
 	    newBurgerInput.attr("type", "text");
 	    newBurgerInput.addClass("edit");
 	    newBurgerInput.css("display", "none");
-	    newBurgerRow.append(newBurgerInput);
+	    newInputRow.append(newBurgerInput);
 	    var devourBtn = $("<button>");
 	    devourBtn.addClass("btn btn-default");
 	    devourBtn.text("Devour it!");
@@ -58,7 +58,7 @@ $(document).ready(function() {
 			burger_name: newBurgerInput
 				.val()
 				.trim(),
-			complete: false
+			devoured: false
 		};
 
 		// Posting the new burger, calling getburgers() when done
