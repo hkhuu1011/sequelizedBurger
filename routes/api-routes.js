@@ -3,6 +3,11 @@ var db = require("../models");
 
 // Routes
 module.exports = function(app) {
+  app.get("/", function(req, res) {
+    db.Burgers.findAll({}).then(function(dbBurgers) {
+      res.json(dbBurgers);
+    });
+  });
 
   // GET route for getting all of the burgers
   app.get("/api/burgers", function(req, res) {
