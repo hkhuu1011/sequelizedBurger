@@ -1,14 +1,14 @@
 // Dependency
-var path = require("path");
+// var path = require("path");
 var db = require("../models");
 
 // Routes
 module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
-  	db.Burger.findAll({}).then(function(dbBurger) {
+  	db.Burgers.findAll({}).then(function(dbBurgers) {
   		var hbsObject = {
-  			burgers: dbBurger
+  			burgers: dbBurgers
   		};
   		res.render("index", hbsObject);
   	});
