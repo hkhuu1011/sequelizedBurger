@@ -24,8 +24,9 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a burger_name
     // and devoured property (req.body)
+    console.log("Name of Burger: ", req.body.burger_name);
     db.Burgers.create({
-      name: req.body.burger_name
+      burger_name: req.body.burger_name
       // devoured: req.body.devoured
     }).then(function(dbBurgers) {
       // We have access to the new burger as an argument inside of the callback function
