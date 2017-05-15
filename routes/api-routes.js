@@ -25,12 +25,12 @@ module.exports = function(app) {
     // insert into our table. In this case we just we pass in an object with a burger_name
     // and devoured property (req.body)
     db.Burgers.create({
-      name: req.body.burger_name,
+      name: req.body.burger_name
       // devoured: req.body.devoured
     }).then(function(dbBurgers) {
       // We have access to the new burger as an argument inside of the callback function
-      res.json(dbBurgers);
-      // res.redirect("/");
+      // res.json(dbBurgers);
+      res.redirect("/");
     }).catch(function (error){
       res.json(error);
     });
