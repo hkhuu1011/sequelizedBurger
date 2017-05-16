@@ -12,6 +12,6 @@
 
 - Finally, once the "Devour it!" button has been clicked, it will move the burger to the "Devoured!" column.
 
-This application uses MySQL, Node, Express, Handlebars and ORM.
+This application uses MySQL, Node, Express, Handlebars and Sequelize.
 
 ![alt text](https://raw.githubusercontent.com/hkhuu1011/burger/master/public/assets/img/Screen_Shot.png "Eat-Da-Burger!")
