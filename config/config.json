@@ -18,6 +18,7 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
+    "use_env_variable": "mysql://beq35pdvp7z7vgp7:fw2jilfcjtx8na6z@gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/canc9rmz3n08ro1o",
     "dialect": "mysql"
   }
 }
